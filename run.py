@@ -148,9 +148,14 @@ def calculate_stock_data(data):
     new_stock_data = []
 
     for column in data:
+        #transform the numbers in the column to integrals.
         int_column = [int(num) for num in column]
+        # sum of the numbers in column divided by length (5) in this, 
+        # to get the average
         average = sum(int_column) / len(int_column)
+        # stock_num = the avarage times 1.1 = adding 10% 
         stock_num = average * 1.1
+        # append stock_num to new_stock_data, using round method to make number to closest whole number.
         new_stock_data.append(round(stock_num))
 
     return new_stock_data
